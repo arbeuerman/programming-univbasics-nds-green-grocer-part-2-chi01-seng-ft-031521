@@ -65,3 +65,4 @@ coupons = [
     ]
 
 puts apply_coupons(consolidated_cart, coupons)
+puts apply_clearance(consolidated_cart)
