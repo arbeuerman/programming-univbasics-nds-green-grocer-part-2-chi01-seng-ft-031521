@@ -51,6 +51,12 @@ def checkout(cart, coupons)
   consolidated_cart = consolidate_cart(cart)
   consolidated_cart_w_coupons = apply_coupons(consolidated_cart, coupons)
   updated_prices_cart = apply_clearance(consolidated_cart_w_coupons)
+  total_cost = 0
+  updated_prices_cart.each do |item_with_updated_price|
+    cost_of_item = item_with_updated_price[:count] * item_with_updated_price[:price]
+    total_cost += cost_of_item  
+  end 
+  total_cost
 end
 
 consolidated_cart = [
