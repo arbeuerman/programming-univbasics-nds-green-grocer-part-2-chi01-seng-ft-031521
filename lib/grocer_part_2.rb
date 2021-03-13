@@ -30,9 +30,6 @@ consolidated_cart
 end
 
 def apply_clearance(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
   cart.each do |consolidated_item|
     if consolidated_item[:clearance]
       consolidated_item[:price] = (consolidated_item[:price] * 0.8).round(2)
@@ -51,6 +48,7 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
+  consolidated_cart = con
 end
 
 consolidated_cart = [
