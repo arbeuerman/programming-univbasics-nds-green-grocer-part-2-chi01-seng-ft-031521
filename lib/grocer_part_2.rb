@@ -48,17 +48,9 @@ def checkout(cart, coupons)
 end
 
 consolidated_cart = [
-      {:item => "AVOCADO", :price => 3.00, :clearance => true},
-      {:item => "KALE", :price => 3.00, :clearance => false},
-      {:item => "BLACK_BEANS", :price => 2.50, :clearance => false},
-      {:item => "ALMONDS", :price => 9.00, :clearance => false},
-      {:item => "TEMPEH", :price => 3.00, :clearance => true},
-      {:item => "CHEESE", :price => 6.50, :clearance => false},
-      {:item => "BEER", :price => 13.00, :clearance => false},
-      {:item => "PEANUTBUTTER", :price => 3.00, :clearance => true},
-      {:item => "BEETS", :price => 2.50, :clearance => false},
-      {:item => "SOY MILK", :price => 4.50, :clearance => true}
-    ]
+  {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 3},
+  {:item => "KALE",    :price => 3.00, :clearance => false, :count => 1}
+]
 
 coupons = [
       {:item => "AVOCADO", :num => 2, :cost => 5.00},
