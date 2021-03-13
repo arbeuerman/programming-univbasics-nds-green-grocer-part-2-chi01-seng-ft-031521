@@ -36,6 +36,7 @@ def apply_clearance(cart)
   cart.each do |consolidated_item|
     if consolidated_item[:clearance]
       consolidated_item[:price] *= 0.8
+      consolidated_item[:price].to_f 
     end 
   end 
   cart
