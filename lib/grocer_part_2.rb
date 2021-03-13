@@ -36,7 +36,6 @@ def apply_clearance(cart)
   cart.each do |consolidated_item|
     if consolidated_item[:clearance]
       consolidated_item[:price] = (consolidated_item[:price] * 0.8).round(2)
-      binding.pry 
     end 
   end 
   cart
