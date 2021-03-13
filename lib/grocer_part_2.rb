@@ -56,6 +56,10 @@ def checkout(cart, coupons)
     cost_of_item = item_with_updated_price[:count] * item_with_updated_price[:price]
     total_cost += cost_of_item  
   end 
+  
+  if total_cost > 100
+    total_cost *= 0.90
+  end   
   total_cost
 end
 
