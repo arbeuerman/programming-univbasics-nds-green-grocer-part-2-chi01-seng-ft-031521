@@ -49,21 +49,25 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   consolidated_cart = consolidate_cart(cart)
+  binding.pry 
   consolidated_cart_w_coupons = apply_coupons(consolidated_cart, coupons)
+  binding.pry 
   updated_prices_cart = apply_clearance(consolidated_cart_w_coupons)
+  binding.pry 
   total_cost = 0
   updated_prices_cart.each do |item_with_updated_price|
     cost_of_item = item_with_updated_price[:count] * item_with_updated_price[:price]
     total_cost += cost_of_item  
   end 
-  
+  binding.pry 
   if total_cost > 100
     total_cost *= 0.90
   end   
+  binding.pry 
   total_cost
 end
 
-consolidated_cart = [
+cart = [
   {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 1},
   {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 1},
   {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 1},
@@ -77,4 +81,5 @@ coupons = [
     ]
 
 #puts apply_coupons(consolidated_cart, coupons)
-puts apply_clearance(consolidated_cart)
+#puts apply_clearance(consolidated_cart)
+puts checkout(cart, coupons)
