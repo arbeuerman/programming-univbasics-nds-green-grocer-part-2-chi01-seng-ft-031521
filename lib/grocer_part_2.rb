@@ -37,6 +37,7 @@ def apply_clearance(cart)
     if consolidated_item[:clearance]
       consolidated_item[:price] *= 0.8
       consolidated_item[:price].round(2)
+      binding.pry 
     end 
   end 
   cart
