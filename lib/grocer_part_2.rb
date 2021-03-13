@@ -33,6 +33,12 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  cart.each do |consolidated_item|
+    if consolidated_item[:clearance]
+      consolidated_item[:price] *= 0.8
+    end 
+  end 
+  cart
 end
 
 def checkout(cart, coupons)
