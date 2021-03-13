@@ -18,7 +18,7 @@ def apply_coupons(consolidated_cart, coupons)
         #update price per item from coupon 
         item_coupon_applied[:price] = item_with_coupon[:cost]/item_with_coupon[:num]
         #add rest of entries into hash 
-        item_coupon_applied[:clearance] = true 
+        item_coupon_applied[:clearance] = consolidated_item[:clearance] 
         item_coupon_applied[:count] = item_with_coupon[:num]
         consolidated_cart << item_coupon_applied
         #binding.pry
