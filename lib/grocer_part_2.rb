@@ -49,12 +49,14 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   consolidated_cart = consolidate_cart(cart)
-  consolidated_cart_w_coupons = apply_coupons(consolidated_cart)
-  apply_clearance(consolidated_cart)
+  consolidated_cart_w_coupons = apply_coupons(consolidated_cart, coupons)
+  updated_prices_cart = apply_clearance(consolidated_cart_w_coupons)
 end
 
 consolidated_cart = [
-  {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 3},
+  {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 1},
+  {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 1},
+  {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 1},
   {:item => "KALE",    :price => 3.00, :clearance => false, :count => 1}
 ]
 
